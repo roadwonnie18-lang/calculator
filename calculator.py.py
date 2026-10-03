@@ -19,7 +19,13 @@ while True:
         try:
             num1: float = float(input('First number: '))
             num2: float = float(input('Second number: '))
-            print(f'{bot_name}: The sum is {num1 + num2}')
+            third_input = input('Third number: (or just press enter)').strip.()
+            if third_input in ['', 'none', 'null', 'no number']:
+                num3 = 0.0
+            else:
+                num3 = float(third_input)
+                
+            print(f'{bot_name}: The sum is {num1 + num2 + num3}')
         except ValueError:
             print(f'{bot_name}: Please enter a valid number')
 
@@ -28,7 +34,12 @@ while True:
         try:
             num1: float = float(input('First number: '))
             num2: float = float(input('Second number: '))
-            print(f'{bot_name}: The difference is {num1 - num2}')
+            third_input = input('Third number: (or just press enter)')
+            if third_input in ['', 'none', 'null', 'no number']:
+                num3 = 0.0
+            else:
+                num3 = float(third_input)     
+            print(f'{bot_name}: The difference is {num1 - num2 - num3}')
         except ValueError:
             print(f'{bot_name}: Please enter a valid number')
 
@@ -36,7 +47,12 @@ while True:
         print(f'{bot_name}: what do you want to multiply?')
         try:
             num1: float = float(input('First number: '))
-            num2: float = float(input('Second number: '))
+            num2: float = float(input('Second number: ')) 
+            third_input = input('Third number: (or just press enter)')
+            if third_input in ['', 'none', 'null', 'no number']:
+                num3 = 1.0
+            else:
+                num3 = float(third_input)
             print(f'{bot_name}: The product is {num1 * num2}')
         except ValueError:
             print(f'{bot_name}: Please enter a valid number')
@@ -46,6 +62,11 @@ while True:
         try:
             num1: float = float(input('First number: '))
             num2: float = float(input('Second number: '))
+            third_input = input('Third number: (or just press enter)')
+            if third_input in ['', 'none', 'null', 'no number']:
+                num3 = 1.0
+            else:
+                num3 = float(third_input)
             print(f'{bot_name}: The quotient is {num1 / num2}')
         except ValueError:
             print(f'{bot_name}: Please enter a valid number')
@@ -70,6 +91,7 @@ while True:
         print(f'{bot_name}: what do you want to find the cubed root of?')
         num1: float = float(input('Number:'))
         print(f'{bot_name}: The cubed root is {math.cbrt(num1)}')
+
 
     elif user_input in ['/help', 'help']:
         print(f'{bot_name}: you can say add, subtract, multiply or divide it is just a simple calculator')
